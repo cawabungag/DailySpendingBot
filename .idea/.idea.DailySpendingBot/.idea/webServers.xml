@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a42cd5d6-96ca-4707-b797-8762a080a6e3" name="84.201.139.219" url="http://84.201.139.219">
+        <fileTransfer rootFolder="/home/cawa/app" accessType="SFTP" host="84.201.139.219" port="22" sshConfigId="0495d027-a84d-4e30-a029-71c4ab944888" sshConfig="cawa@84.201.139.219:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
