@@ -37,7 +37,7 @@ public class AddPurchaseCommand : ICommand
 		var summaryInMonth = await _purchaseController.GetPurchaseInMonth(dateTime.Month, dateTime.Year);
 		var summaryInDay = await _purchaseController.GetPurchaseInDay(dateTime.Month, dateTime.Day, dateTime.Year);
 		return $"ПОТРАЧЕНО {value}RUB. \n"
-		       + $"Итого за день: {summaryInDay} \n"
-		       + $"Итого за месяц: {summaryInMonth} \n";
+		       + $"Итого за день: {summaryInDay}RUB. \n"
+		       + $"Итого за месяц: {summaryInMonth}RUB. \n";
 	}
 }

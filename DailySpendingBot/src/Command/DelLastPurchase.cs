@@ -5,7 +5,7 @@ namespace DailySpendingBot.Command;
 public class DelLastPurchase : ICommand
 {
 	private readonly PurchaseController _purchaseController;
-	public string Cmd => "del last";
+	public string Cmd => "dellast";
 	public bool IsAlwaysExecute => false;
 	
 	public DelLastPurchase(PurchaseController purchaseController)

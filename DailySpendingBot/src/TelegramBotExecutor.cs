@@ -20,13 +20,13 @@ public class TelegramBotExecutor
 		ReceiverOptions receiverOptions = new() {AllowedUpdates = Array.Empty<UpdateType>()};
 
 		botClient.StartReceiving(
-			updateHandler: HandleUpdateAsync,
-			pollingErrorHandler: HandlePollingErrorAsync,
-			receiverOptions: receiverOptions,
-			cancellationToken: cts.Token
+			HandleUpdateAsync,
+			HandlePollingErrorAsync,
+			receiverOptions,
+			cts.Token
 		);
 
-		Console.ReadLine();
+		Thread.Sleep(Timeout.Infinite);
 
 		cts.Cancel();
 
@@ -38,7 +38,7 @@ public class TelegramBotExecutor
 			
 			var messageText = message.Text;
 			var chatId = message.Chat.Id;
-			Console.WriteLine($"Received a '{messageText}' message in chat {chatId}.");
+			// Console.WriteLine($"Received a '{messageText}' message in chat {chatId}.");
 			await Execute(messageText, botClient, cancellationToken, chatId);
 		}
 
@@ -51,7 +51,7 @@ public class TelegramBotExecutor
 				_ => exception.ToString()
 			};
 
-			Console.WriteLine(ErrorMessage);
+			// Console.WriteLine(ErrorMessage);
 			return Task.CompletedTask;
 		}
 	}
